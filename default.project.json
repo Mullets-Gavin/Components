@@ -1,6 +1,5 @@
 {
 	"name": "roblox-ts-game",
-	"servePlaceIds": [6227955197, 95206881],
 	"tree": {
 		"$className": "DataModel",
 		"ReplicatedStorage": {
