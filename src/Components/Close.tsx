@@ -1,32 +1,34 @@
 import Roact from "@rbxts/roact";
+import { Context, Pages } from "../Context";
 
 interface CloseState {}
-interface CloseProps {
-	text: string;
-	panel?: Frame;
-}
+interface CloseProps {}
 
+// Close the page with this button, sets the value to 0 (0 = none)
 export class Close extends Roact.Component<CloseProps, CloseState> {
 	constructor(props: CloseProps) {
 		super(props);
 	}
 
-	render() {
+	render(): Roact.Element {
 		return (
-			<textbutton
-				Text={this.props.text}
-				Size={UDim2.fromOffset(100, 50)}
-				AnchorPoint={new Vector2(0.5, 0.5)}
-				Position={UDim2.fromScale(1, 0)}
-				Event={{
-					MouseButton1Click: (rbx) => {
-						if (!this.props.panel) return;
-
-						print("worked!");
-						this.props.panel.Visible = false;
-					},
+			<Context.Consumer
+				render={(value: { viewIndex: number; setPage: (index: number) => void }) => {
+					return (
+						<textbutton
+							Text={""}
+							Size={UDim2.fromOffset(40, 40)}
+							AnchorPoint={new Vector2(1, 0)}
+							Position={UDim2.fromScale(1, 0)}
+							Event={{
+								MouseButton1Click: () => value.setPage(Pages.none),
+							}}
+						>
+							<uicorner CornerRadius={new UDim(0, 6)} />
+						</textbutton>
+					);
 				}}
-			/>
+			></Context.Consumer>
 		);
 	}
 }

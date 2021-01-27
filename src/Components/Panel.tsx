@@ -6,9 +6,11 @@ interface panelState {
 }
 interface panelProps {
 	index: number;
-	name: string;
+	visible?: boolean;
 }
 
+// Panel is a full-screen size frame that allows you to toggle visibility
+// for your toggles
 export class Panel extends Roact.Component<panelProps, panelState> {
 	constructor(props: panelProps) {
 		super(props);
@@ -31,24 +33,13 @@ export class Panel extends Roact.Component<panelProps, panelState> {
 					return (
 						<frame
 							Position={UDim2.fromScale(0.5, 0.5)}
-							Size={UDim2.fromOffset(300, 500)}
+							Size={UDim2.fromScale(1, 1)}
 							AnchorPoint={new Vector2(0.5, 0.5)}
-							BackgroundTransparency={0}
+							BackgroundTransparency={1}
 							BorderSizePixel={0}
 							BackgroundColor3={new Color3(30, 30, 30)}
-							Visible={this.state.panelVisible}
+							Visible={this.props.visible ?? this.state.panelVisible}
 						>
-							<uicorner CornerRadius={new UDim(0, 6)} />
-							<textlabel
-								Text={this.props.name}
-								AnchorPoint={new Vector2(0.5, 0)}
-								Position={new UDim2(0.5, 0, 0, 0)}
-								Size={UDim2.fromOffset(200, 50)}
-								BackgroundTransparency={1}
-								TextColor3={new Color3(255, 255, 255)}
-								TextStrokeTransparency={0.5}
-								TextScaled={true}
-							></textlabel>
 							{this.props[Roact.Children]}
 						</frame>
 					);
