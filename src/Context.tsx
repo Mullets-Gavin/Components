@@ -5,7 +5,6 @@ export const Pages = {
 	none: 0,
 	shop: 1,
 	inventory: 2,
-	else: 3,
 };
 
 // The context used for page swapping
