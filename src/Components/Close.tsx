@@ -25,6 +25,19 @@ export class Close extends Roact.Component<CloseProps, CloseState> {
 							}}
 						>
 							<uicorner CornerRadius={new UDim(0, 6)} />
+							<uipadding
+								PaddingTop={new UDim(0, 6)}
+								PaddingBottom={new UDim(0, 6)}
+								PaddingLeft={new UDim(0, 6)}
+								PaddingRight={new UDim(0, 6)}
+							/>
+							<imagelabel
+								Image={"http://www.roblox.com/asset/?id=3143448393"}
+								Size={UDim2.fromScale(1, 1)}
+								AnchorPoint={new Vector2(0.5, 0.5)}
+								Position={UDim2.fromScale(0.5, 0.5)}
+								BackgroundTransparency={1}
+							/>
 						</textbutton>
 					);
 				}}
