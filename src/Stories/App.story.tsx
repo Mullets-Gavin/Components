@@ -1,8 +1,8 @@
 import Roact from "@rbxts/roact";
-import { Router } from "../Router";
+import { App } from "../App";
 
 export = (target: Frame): (() => void) => {
-	const app = <Router />;
+	const app = <App />;
 	const mount = Roact.mount(app, target);
 
 	return () => {

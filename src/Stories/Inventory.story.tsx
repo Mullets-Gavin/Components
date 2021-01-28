@@ -1,9 +1,8 @@
 import Roact from "@rbxts/roact";
-
-import { Else } from "../Else";
+import { Inventory } from "../Pages/Inventory";
 
 export = (target: Frame): (() => void) => {
-	const app = <Else visible={true} />;
+	const app = <Inventory visible={true} />;
 	const mount = Roact.mount(app, target);
 
 	return () => {
