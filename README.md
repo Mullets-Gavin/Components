@@ -33,7 +33,7 @@ Instructions:
 
 ## Demo
 
-![components demo](https://raw.githubusercontent.com/Mullets-Gavin/Roact-TSX/master/assets/ComponentsDemo.gif?token=AJCSYMGGPQ2B3UFOLBC7IOLACJPGY)
+![components demo](https://media.giphy.com/media/HbYNtbGlnwfNLF9Y2S/giphy.gif)
 
 ## License
 
