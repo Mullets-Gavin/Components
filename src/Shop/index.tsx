@@ -2,9 +2,11 @@ import Roact from "@rbxts/roact";
 import { Pages } from "../Context";
 import { Panel } from "../Components/Panel";
 
-interface shopProps {}
 interface shopState {
 	count: number;
+}
+interface shopProps {
+	visible?: boolean;
 }
 
 export class Shop extends Roact.Component<shopProps, shopState> {
@@ -16,7 +18,7 @@ export class Shop extends Roact.Component<shopProps, shopState> {
 
 	render() {
 		return (
-			<Panel Key={"Shop"} name={"Shop"} index={Pages.shop}>
+			<Panel Key={"Shop"} index={Pages.shop} visible={this.props.visible}>
 				<uicorner CornerRadius={new UDim(0, 6)} />
 
 				<textlabel

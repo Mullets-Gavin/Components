@@ -2,9 +2,11 @@ import Roact from "@rbxts/roact";
 import { Pages } from "../Context";
 import { Panel } from "../Components/Panel";
 
-interface inventoryProps {}
 interface inventoryState {
 	count: number;
+}
+interface inventoryProps {
+	visible?: boolean;
 }
 
 export class Inventory extends Roact.Component<inventoryProps, inventoryState> {
@@ -16,7 +18,7 @@ export class Inventory extends Roact.Component<inventoryProps, inventoryState> {
 
 	render() {
 		return (
-			<Panel Key={"Inventory"} name={"Inventory"} index={Pages.inventory}>
+			<Panel Key={"Inventory"} index={Pages.inventory} visible={this.props.visible}>
 				<uicorner CornerRadius={new UDim(0, 6)} />
 
 				<textlabel
