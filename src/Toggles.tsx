@@ -1,8 +1,8 @@
 import Roact from "@rbxts/roact";
 import { Context, Pages } from "./Context";
-
 import { Toggle } from "./Components/Toggle";
 
+// List of toggles that enable associated panels
 export class Toggles extends Roact.Component {
 	public render(): Roact.Element {
 		return (
@@ -11,15 +11,17 @@ export class Toggles extends Roact.Component {
 					return (
 						<frame
 							Key={"MainButtons"}
-							Size={UDim2.fromOffset(100, 180)}
+							Size={UDim2.fromOffset(100, 170)}
 							Position={new UDim2(0, 10, 0.5, 0)}
 							AnchorPoint={new Vector2(0, 0.5)}
+							BackgroundTransparency={1}
 						>
 							<uilistlayout
 								Padding={new UDim(0, 10)}
 								FillDirection={"Vertical"}
 								VerticalAlignment={"Center"}
 							/>
+
 							<Toggle
 								Key={"shop"}
 								onClick={() => {
