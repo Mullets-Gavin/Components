@@ -1,9 +1,9 @@
 import Roact from "@rbxts/roact";
 import { Context } from "./Context";
-import { Shop } from "./Shop";
-import { Inventory } from "./Inventory";
-import { Else } from "./Else";
+import { Inventory } from "./Pages/Inventory";
+import { Shop } from "./Pages/Shop";
 import { Toggles } from "./Toggles";
+import { App } from "./App";
 
 interface routerProps {}
 interface routerState {
@@ -11,6 +11,7 @@ interface routerState {
 	setPage: (index: number) => void;
 }
 
+// Create a context router for opening pages
 export class Router extends Roact.Component<routerProps, routerState> {
 	constructor(props: {}) {
 		super(props);
@@ -27,19 +28,17 @@ export class Router extends Roact.Component<routerProps, routerState> {
 
 	render(): Roact.Element {
 		return (
-			<frame Size={UDim2.fromScale(1, 1)} BackgroundTransparency={1}>
-				<Context.Provider
-					value={{
-						viewIndex: this.state.viewIndex,
-						setPage: (index: number) => this.setPage(index),
-					}}
-				>
-					<Toggles />
-					<Shop />
-					<Inventory />
-					<Else />
-				</Context.Provider>
-			</frame>
+			<Context.Provider
+				value={{
+					viewIndex: this.state.viewIndex,
+					setPage: (index: number) => this.setPage(index),
+				}}
+			>
+				<App />
+				<Toggles />
+				<Shop />
+				<Inventory />
+			</Context.Provider>
 		);
 	}
 }
