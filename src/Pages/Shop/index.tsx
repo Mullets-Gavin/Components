@@ -14,6 +14,7 @@ interface shopProps {
 	visible?: boolean;
 }
 
+// This is a demo array, remove this and replace with your array of data
 const Tbl = [
 	{
 		name: "arm",
@@ -46,19 +47,13 @@ const Tbl = [
 	},
 ];
 
-const Tbl2 = [
-	{
-		name: "gamepass",
-		color: Color3.fromRGB(8, 48, 17),
-	},
-];
-
 export interface Data {
 	name: string;
 	color: Color3;
 	desc?: string;
 }
 
+// Shop component page which corresponds to the toggles and context
 export class Shop extends Roact.Component<shopProps, shopState> {
 	constructor(props: shopProps) {
 		super(props);
@@ -68,8 +63,9 @@ export class Shop extends Roact.Component<shopProps, shopState> {
 
 	render() {
 		return (
-			<Panel Key={"Else"} index={Pages.shop} visible={this.props.visible}>
+			<Panel Key={"Shop"} index={Pages.shop} visible={this.props.visible}>
 				<frame
+					Key={"Page"}
 					BorderSizePixel={0}
 					Size={UDim2.fromOffset(504, 360)}
 					AnchorPoint={new Vector2(0.5, 0.5)}
@@ -84,7 +80,7 @@ export class Shop extends Roact.Component<shopProps, shopState> {
 						PaddingRight={new UDim(0, 12)}
 					/>
 					<Close />
-					<frame Size={new UDim2(1, -46, 0, 40)} BorderSizePixel={0} BackgroundTransparency={1}>
+					<frame Key={"Tabs"} Size={new UDim2(1, -46, 0, 40)} BorderSizePixel={0} BackgroundTransparency={1}>
 						<uilistlayout FillDirection={"Horizontal"} Padding={new UDim(0, 6)} />
 						<Tab text="Passes" page="gamepass" onClick={(page) => this.setState({ pageVisible: page })} />
 						<Tab text="Money" page="money" onClick={(page) => this.setState({ pageVisible: page })} />

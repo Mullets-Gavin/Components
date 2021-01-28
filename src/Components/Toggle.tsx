@@ -17,6 +17,7 @@ export class Toggle extends Roact.Component<toggleProps, toggleState> {
 	render() {
 		return (
 			<textbutton
+				Key={"Toggle"}
 				Text={""}
 				Size={UDim2.fromScale(1, 1)}
 				BorderSizePixel={0}
@@ -34,6 +35,7 @@ export class Toggle extends Roact.Component<toggleProps, toggleState> {
 					PaddingRight={new UDim(0, 6)}
 				/>
 				<imagelabel
+					Key={"Icon"}
 					Image={this.props.image}
 					Size={UDim2.fromScale(1, 1)}
 					AnchorPoint={new Vector2(0.5, 0.5)}

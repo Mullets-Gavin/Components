@@ -7,6 +7,7 @@ interface tabProps {
 	text: string;
 }
 
+// Tab component used for swapping tabs in pages
 export class Tab extends Roact.Component<tabProps, tabState> {
 	constructor(props: tabProps) {
 		super(props);
@@ -15,6 +16,7 @@ export class Tab extends Roact.Component<tabProps, tabState> {
 	render() {
 		return (
 			<textbutton
+				Key={"Tab"}
 				Text={this.props.text}
 				Size={UDim2.fromOffset(100, 40)}
 				BorderSizePixel={0}

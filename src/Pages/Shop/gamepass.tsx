@@ -9,6 +9,7 @@ interface pageProps {
 	visible: string;
 }
 
+// Create the gamepass page inside the main component
 export class Gamepass extends Roact.Component<pageProps, pageState> {
 	constructor(props: pageProps) {
 		super(props);
@@ -17,6 +18,7 @@ export class Gamepass extends Roact.Component<pageProps, pageState> {
 	render() {
 		return (
 			<frame
+				Key={"GamepassPage"}
 				Size={new UDim2(1, 0, 1, -46)}
 				Position={UDim2.fromScale(0, 1)}
 				AnchorPoint={new Vector2(0, 1)}

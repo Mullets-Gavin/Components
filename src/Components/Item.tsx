@@ -10,6 +10,7 @@ interface itemProps {
 	layoutOrder?: number;
 }
 
+// Generic item component that gets reused in all of the pages
 export class Item extends Roact.Component<itemProps, itemState> {
 	constructor(props: itemProps) {
 		super(props);
@@ -20,6 +21,7 @@ export class Item extends Roact.Component<itemProps, itemState> {
 	render() {
 		return (
 			<textbutton
+				Key={"Item"}
 				Text={""}
 				BackgroundColor3={this.props.color ?? Color3.fromRGB(30, 30, 30)}
 				LayoutOrder={this.props.layoutOrder ?? 1}
@@ -36,6 +38,7 @@ export class Item extends Roact.Component<itemProps, itemState> {
 					PaddingRight={new UDim(0, 6)}
 				/>
 				<textlabel
+					Key={"Title"}
 					Text={this.props.title}
 					Size={new UDim2(1, 0, 0, 30)}
 					BackgroundTransparency={0.9}
@@ -44,6 +47,7 @@ export class Item extends Roact.Component<itemProps, itemState> {
 					TextSize={24}
 				/>
 				<textlabel
+					Key={"Desc"}
 					Size={new UDim2(1, 0, 1, -74)}
 					Text={this.props.desc ?? ""}
 					Position={UDim2.fromScale(0, 0.5)}
@@ -57,6 +61,7 @@ export class Item extends Roact.Component<itemProps, itemState> {
 					Visible={this.state.promptVisible}
 				></textlabel>
 				<textlabel
+					Key={"Prompt"}
 					Size={new UDim2(1, 0, 0, 30)}
 					Text={""}
 					Position={UDim2.fromScale(0, 1)}

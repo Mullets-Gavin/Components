@@ -7,7 +7,7 @@ const PlayerGui = Player.WaitForChild("PlayerGui");
 
 // Initialize and mount Roact on runtime
 Roact.mount(
-	<screengui IgnoreGuiInset={true}>
+	<screengui Key={"Main"} IgnoreGuiInset={true} ResetOnSpawn={false}>
 		<Router />
 	</screengui>,
 	PlayerGui,

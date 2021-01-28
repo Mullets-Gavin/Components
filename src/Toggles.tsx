@@ -10,20 +10,21 @@ export class Toggles extends Roact.Component {
 				render={(value: { viewIndex: number; setPage: (index: number) => void }) => {
 					return (
 						<frame
-							Key={"MainButtons"}
+							Key={"Toggles"}
 							Size={UDim2.fromOffset(80, 100)}
 							Position={new UDim2(0, 10, 0.5, 0)}
 							AnchorPoint={new Vector2(0, 0.5)}
 							BackgroundTransparency={1}
 						>
 							<uilistlayout
+								Key={"Layout"}
 								Padding={new UDim(0, 10)}
 								FillDirection={"Vertical"}
 								VerticalAlignment={"Center"}
 								SortOrder={"LayoutOrder"}
 							/>
 							<Toggle
-								Key={"shop"}
+								Key={"ShopToggle"}
 								onClick={() => {
 									const index = Pages.shop;
 									if (value.viewIndex === index) {
@@ -37,7 +38,7 @@ export class Toggles extends Roact.Component {
 								image={"http://www.roblox.com/asset/?id=3143448393"}
 							/>
 							<Toggle
-								Key={"inv"}
+								Key={"InventoryToggle"}
 								onClick={() => {
 									const index = Pages.inventory;
 									if (value.viewIndex === index) {

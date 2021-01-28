@@ -36,6 +36,6 @@ export class AutoTextLabel extends Roact.Component<labelProps, labelState> {
 	}
 
 	render() {
-		return <textlabel {...this.props} Ref={this.ref} />;
+		return <textlabel Key={"DynamicTextLabel"} {...this.props} Ref={this.ref} />;
 	}
 }

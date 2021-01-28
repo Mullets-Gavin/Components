@@ -34,6 +34,6 @@ export class AutoScrollingFrame extends Roact.Component<frameProps, frameState> 
 	}
 
 	render() {
-		return <scrollingframe {...this.props} Ref={this.ref} />;
+		return <scrollingframe Key={"DynamicScrollingFrame"} {...this.props} Ref={this.ref} />;
 	}
 }

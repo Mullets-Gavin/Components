@@ -16,6 +16,7 @@ export class Close extends Roact.Component<CloseProps, CloseState> {
 				render={(value: { viewIndex: number; setPage: (index: number) => void }) => {
 					return (
 						<textbutton
+							Key={"Close"}
 							Text={""}
 							Size={UDim2.fromOffset(40, 40)}
 							AnchorPoint={new Vector2(1, 0)}
@@ -32,6 +33,7 @@ export class Close extends Roact.Component<CloseProps, CloseState> {
 								PaddingRight={new UDim(0, 6)}
 							/>
 							<imagelabel
+								Key={"Icon"}
 								Image={"http://www.roblox.com/asset/?id=3143448393"}
 								Size={UDim2.fromScale(1, 1)}
 								AnchorPoint={new Vector2(0.5, 0.5)}

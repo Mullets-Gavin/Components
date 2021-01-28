@@ -32,6 +32,7 @@ export class Panel extends Roact.Component<panelProps, panelState> {
 
 					return (
 						<frame
+							Key={"Panel"}
 							Position={UDim2.fromScale(0.5, 0.5)}
 							Size={UDim2.fromScale(1, 1)}
 							AnchorPoint={new Vector2(0.5, 0.5)}

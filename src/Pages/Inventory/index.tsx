@@ -13,6 +13,7 @@ interface inventoryProps {
 	visible?: boolean;
 }
 
+// This is a demo array, remove this and replace with your array of data
 const Tbl = [
 	{
 		name: "arm",
@@ -45,19 +46,13 @@ const Tbl = [
 	},
 ];
 
-const Tbl2 = [
-	{
-		name: "gamepass",
-		color: Color3.fromRGB(8, 48, 17),
-	},
-];
-
 export interface Data {
 	name: string;
 	color: Color3;
 	desc?: string;
 }
 
+// Inventory component page which corresponds to the toggles and context
 export class Inventory extends Roact.Component<inventoryProps, inventoryState> {
 	constructor(props: inventoryProps) {
 		super(props);
@@ -67,8 +62,9 @@ export class Inventory extends Roact.Component<inventoryProps, inventoryState> {
 
 	render() {
 		return (
-			<Panel Key={"Else"} index={Pages.inventory} visible={this.props.visible}>
+			<Panel Key={"Inventory"} index={Pages.inventory} visible={this.props.visible}>
 				<frame
+					Key={"Page"}
 					BorderSizePixel={0}
 					Size={UDim2.fromOffset(504, 360)}
 					AnchorPoint={new Vector2(0.5, 0.5)}
@@ -83,7 +79,7 @@ export class Inventory extends Roact.Component<inventoryProps, inventoryState> {
 						PaddingRight={new UDim(0, 12)}
 					/>
 					<Close />
-					<frame Size={new UDim2(1, -46, 0, 40)} BorderSizePixel={0} BackgroundTransparency={1}>
+					<frame Key={"Tabs"} Size={new UDim2(1, -46, 0, 40)} BorderSizePixel={0} BackgroundTransparency={1}>
 						<uilistlayout FillDirection={"Horizontal"} Padding={new UDim(0, 6)} />
 						<Tab text="Owned" page="owned" onClick={(page) => this.setState({ pageVisible: page })} />
 					</frame>

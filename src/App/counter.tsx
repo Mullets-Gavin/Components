@@ -6,6 +6,7 @@ interface counterState {
 }
 interface counterProps {}
 
+// Counter component which gets displayed at the top of the screen
 export class Counter extends Roact.Component<counterProps, counterState> {
 	constructor(props: counterProps) {
 		super(props);
@@ -16,6 +17,7 @@ export class Counter extends Roact.Component<counterProps, counterState> {
 	render() {
 		return (
 			<frame
+				Key={"Counter"}
 				Size={UDim2.fromOffset(160, 40)}
 				Position={new UDim2(0.5, 0, 0, 4)}
 				AnchorPoint={new Vector2(0.5, 0)}
@@ -29,6 +31,7 @@ export class Counter extends Roact.Component<counterProps, counterState> {
 				/>
 				<uilistlayout FillDirection={"Horizontal"} Padding={new UDim(0, 6)} HorizontalAlignment={"Center"} />
 				<imagelabel
+					Key={"Icon"}
 					Image={"http://www.roblox.com/asset/?id=3143448237"}
 					Size={UDim2.fromScale(1, 1)}
 					BackgroundTransparency={1}
