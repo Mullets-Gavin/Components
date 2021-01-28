@@ -5,6 +5,7 @@ import { Router } from "./Router";
 const Player = Players.LocalPlayer;
 const PlayerGui = Player.WaitForChild("PlayerGui");
 
+// Initialize and mount Roact on runtime
 Roact.mount(
 	<screengui IgnoreGuiInset={true}>
 		<Router />
