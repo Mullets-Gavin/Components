@@ -1,5 +1,5 @@
 {
-	"name": "roblox-ts-game",
+	"name": "roact-tsx",
 	"tree": {
 		"$className": "DataModel",
 		"ReplicatedStorage": {
